@@ -110,7 +110,8 @@ resource "oci_core_subnet" "public_subnet1_phxvcn" {
   vcn_id              = "${oci_core_virtual_network.test_phx_vcn.id}"
   route_table_id      = "${oci_core_route_table.test_phx_vcn_route_table.id}"
   security_list_ids   = ["${oci_core_security_list.public_subnet_phxvcn.id}"]
-  prohibit_public_ip_on_vnic = true
+  # prohibit_public_ip_on_vnic is true for private subnet
+  prohibit_public_ip_on_vnic = false
 }
 
 
